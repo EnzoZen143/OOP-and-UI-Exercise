@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Player1 : MonoBehaviour
+public class Player1 : Abstract
 {
-    public int Player1Health;
-    public int Player1Mana;
-    public int Player1Attack;
-    public int Player1Defense;
-    public float Player1Speed;
+    [SerializeField] private UI ui;
+
+
+    private void OnGUI()
+    {
+        if (GUI.Button(new Rect(120, 80, 180, 50), "Player 1"))
+        {
+            ui.Stats = ("Health: " + Health + "\nDefense: " + Defense);
+        }
+    }
 }
